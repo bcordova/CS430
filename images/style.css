@@ -1,0 +1,148 @@
+body {
+	background-color:#474553;
+	background-image:url(images/bg.gif);
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 30px 10px;
+	padding: 0px;
+}
+.clear{clear:both;}
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#container {
+	margin: 0px auto;
+	text-align: left;
+	width: 717px;
+}
+a{
+	font-size:12px;
+}
+p{
+	margin: 15px 0px;
+}
+/********************** Header ***************************/
+#header {
+	margin: 0px 0px 0px 0px;
+	background-image:url(images/eagle.png);
+	width:719px;
+	height:152px;
+	position:relative;
+}
+#header ul{
+	background-color:#474553;
+	width:712px;
+	border: 3px solid #FFFFFF;
+	display:block;
+	top:152px;
+	position:absolute;
+	margin: 0px 0px 0px 0px;
+	height:22px;
+	padding:5px 0px 0px 0px;
+	text-align:center;
+}
+#header li{
+	display:inline;	
+}
+#header ul a{
+	text-decoration:none;
+	color:#FFFFFF;
+	margin: 0px 15px;
+}
+#header ul a:hover{
+	text-decoration:underline;
+	color:#28556b;
+}
+
+#logo_w1,#logo_w2 {
+	font-size: 24px;
+	font-style:italic;
+	color:#FFFFFF;
+	position:absolute;
+}
+#logo_w1{
+	top:15px;
+	left:70px;
+}
+#logo_w2{
+	top:44px;
+	left:94px;
+}
+#header_text {
+	top:90px;
+	left:43px;
+	width:230px;
+	position:absolute;
+}
+#header_text p{
+	font-size: 18px;
+	color:#FFFFFF;
+}
+#header_text a{color:#28556b;}
+#header_text a:hover{color:#c77e0c;}
+/********************** Content ***************************/
+#content {
+	background-image:url(images/content_bg.gif);
+	width:718px;
+}
+img{
+	border-width:0px;
+}
+/* Main body of page. */
+h1{
+	color:#000000;
+	font-size:14px;
+	margin: 100px 0px 20px 0px;
+}
+
+h2{
+	color:#85a157;
+	font-size:14px;
+	text-align:center;
+	width:200px;
+	margin: 10px 0px 15px 0px;
+}
+#left {
+	float:left;
+	width:428px;
+	margin-left:27px;
+	padding: 0px 10px 30px 0px;
+	display:inline;
+}
+#left a{color:#28556b;}
+#left a:hover{color:#c77e0c;}
+#photos a{
+	margin-right:10px;
+	
+}
+#right {
+	float:right;
+	width:210px;
+	padding: 0px 20px 20px 20px;
+	margin-top:30px;
+	border-left: #FFF 2px solid;
+
+}
+#right a{
+	color:#474553;
+}
+#right a:hover{
+	color:#85a157;
+}
+#right h2{
+	color:#7378F7;
+}
+/********************** Footer ***************************/
+#footerline {
+clear:both;
+background-image:url(images/footer_bg.gif);
+font-size:1px;
+height:100px;
+}
+#footer {
+	width:717px;
+	text-align:center;
+	padding: 20px 0px;
+}
