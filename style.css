@@ -26,9 +26,9 @@ p{
 /********************** Header ***************************/
 #header {
 	margin: 0px 0px 0px 0px;
-	background-image:url(images/eagle.png);
+	background-image:url(images/topmainbar_bg.gif);
 	width:719px;
-	height:152px;
+	height:128px;
 	position:relative;
 }
 #header ul{
@@ -36,7 +36,7 @@ p{
 	width:712px;
 	border: 3px solid #FFFFFF;
 	display:block;
-	top:152px;
+	top:125px;
 	position:absolute;
 	margin: 0px 0px 0px 0px;
 	height:22px;
@@ -52,8 +52,8 @@ p{
 	margin: 0px 15px;
 }
 #header ul a:hover{
-	text-decoration:underline;
-	color:#28556b;
+	//text-decoration:underline;
+	color:#e7e7e7;
 }
 
 #logo_w1,#logo_w2 {
@@ -139,7 +139,7 @@ h2{
 clear:both;
 background-image:url(images/footer_bg.gif);
 font-size:1px;
-height:100px;
+height:11px;
 }
 #footer {
 	width:717px;
