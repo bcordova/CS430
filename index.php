@@ -3,7 +3,7 @@
 ?>
 			
        <div id="content">
-                <div id="left">
+                <div id="right">
                     <h1>Welcome to the project repository!</h1>
                     <p>This website provides complete access to all student-developed research applications.  </p>
                     <p>From here you can view the list of available projects, submit a project you have already completed or submit a new project proposal.</p>
@@ -16,7 +16,24 @@
                         <a href="http://www.umw.edu"><img src="images/iphone_test.png" alt="photo" /></a>
                     </div>
                 </div>
-                <div id="right">
+                <div id="left">
+			<div id="nav-box" align="center">
+
+
+				<form action="home.php" method="post">
+				<br>
+				<b><i><font size="2" face="Verdana" color="#e7e7e7">Username:</b></i><input type="text" size=15 name="username" >
+				<br><br>
+				<b><i>Password:</b></i><input type="password" size=15 name="password" ></font>
+				<br><br>
+				<input type="submit" class="formbutton" value="Login">
+				<br><br>
+				</form>
+
+				<a href="#"><i>Register Here</i></a>
+
+			</div>
+		     
                     <h2>Latest news</h2>
                     <a href="http://www.umw.edu">Project Uploads</a>
                     <p>Find out all the new information about recent project uploads!</p>
@@ -25,10 +42,6 @@
                     <a href="http://www.umw.edu">Project Screenshots</a>
                     <p>Review the most recent screenshot uploads of any project currently in progress for for previous projects now submitted.</p>
                 </div>
-                <div id="footerline"></div>
-            </div>
-
-            <div id="footer">Department of Computer Science • University of Mary Washington • Trinkle Hall <br> 1301 College Avenue, Fredericksburg, VA 22401 • 540-654-1592</div>	
-        </div>
-    </body>
-</html>
+<?php
+   include('footer.html');
+?>  

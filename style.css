@@ -27,33 +27,85 @@ p{
 #header {
 	margin: 0px 0px 0px 0px;
 	background-image:url(images/topmainbar_bg.gif);
-	width:719px;
+	width:718px;
 	height:128px;
 	position:relative;
 }
-#header ul{
-	background-color:#474553;
-	width:712px;
-	border: 3px solid #FFFFFF;
-	display:block;
-	top:125px;
-	position:absolute;
-	margin: 0px 0px 0px 0px;
-	height:22px;
-	padding:5px 0px 0px 0px;
-	text-align:center;
+
+
+#navcontainer {
+margin-top: 55px;
+float: center;
 }
-#header li{
-	display:inline;	
+
+#navcontainer ul
+{
+	padding: 0px;
+	margin: 0 auto;
+	background-color: #223f61;
+	color: White;
+	float: center;
+	width: 480px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	list-style: none;
+	margin-left: 145px;
 }
-#header ul a{
-	text-decoration:none;
-	color:#FFFFFF;
-	margin: 0px 15px;
+
+#navcontainer li ul {
+	margin: 0 auto;
+	display: none;
+	background-color: #223f61;
+	color: White;
+	float: left;
+	width: 165px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-size: 16px;
+	list-style: none;
+	//margin-left: 197px;
 }
-#header ul a:hover{
-	//text-decoration:underline;
-	color:#e7e7e7;
+
+#navcontainer ul li { 
+	margin: 0 auto;
+  	display: block;
+  	position: relative;
+  	float: left;
+}
+
+#navcontainer ul li a
+{
+	display: block;
+	padding: 0.2em 1em;
+	background-color: #474553;
+	color: White;
+	text-decoration: none;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border: 1px solid #fff;
+	white-space: nowrap;
+	margin-top: 8px;
+	font-weight: bold;
+	font-size: 13px;
+
+}
+
+#navcontainer ul li a:hover
+{
+	background-color: #686868;
+	color: #fff;
+ 
+}
+
+#navcontainer li:hover ul, #navcontainer li.over ul { 
+	display: block;
+	position: absolute; 
+	margin: 0;
+	padding: 0;
+}
+
+#navcontainer li:hover li { 
+	float:none;
+	font-size: 14px;
 }
 
 #logo_w1,#logo_w2 {
@@ -82,10 +134,86 @@ p{
 }
 #header_text a{color:#28556b;}
 #header_text a:hover{color:#c77e0c;}
+
+
+/********************** Forms ***************************/
+
+form {}
+form input 
+{
+	background:#e7e7e7 repeat-x scroll bottom left;
+	border:1.5px solid #000;
+	padding:1px;
+	color:#223f61;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold, italics;
+	font-color: #223f61;
+}
+form input.formbutton 
+{
+	background:#e7e7e7 repeat-x scroll bottom left;
+	color: #223f61;
+	font-size:14px;
+	border:1px solid #223f61;
+	font-weight:bold;
+        margin-right : 0.0em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+} 
+
+
+/********************** Search Form ***************************/
+form.searchform 
+{
+	padding-top:10px;
+	margin-left: 470px;
+}
+
+form.searchform input.formbutton {
+	background:#e7e7e7 repeat-x scroll bottom left;
+	color: #223f61;
+	font-size:12px;
+	border:1px solid #000;
+	font-weight:bold;
+        margin-left : 184px;
+	margin-top: 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+} 
+
+form.searchform input 
+{
+	background:#e7e7e7 repeat-x scroll bottom left;
+	border:1.5px solid #000;
+	padding:1px;
+	color:#223f61;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold, italics;
+	font-color: #223f61;
+}
+
+select option 
+{    
+	line-height: 10px;   
+}   
+select option.group 
+{  
+	color: #e7e7e7;
+	font-size:10px;
+	border:0.3px solid #e7e7e7;
+        margin-right : 0.1em;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-weight:bold;      
+	background:#223f61;        
+}
+
+
 /********************** Content ***************************/
 #content {
 	background-image:url(images/content_bg.gif);
 	width:718px;
+	margin: 0px 0px 0px 0px;
+
 }
 img{
 	border-width:0px;
@@ -104,36 +232,67 @@ h2{
 	width:200px;
 	margin: 10px 0px 15px 0px;
 }
-#left {
-	float:left;
+#right {
+	float:right;
 	width:428px;
 	margin-left:27px;
 	padding: 0px 10px 30px 0px;
 	display:inline;
 }
-#left a{color:#28556b;}
-#left a:hover{color:#c77e0c;}
+#right a{color:#28556b;}
+#right a:hover{color:#c77e0c;}
 #photos a{
 	margin-right:10px;
 	
 }
-#right {
-	float:right;
-	width:210px;
+#left {
+	float:left;
+	width:165px;
 	padding: 0px 20px 20px 20px;
 	margin-top:30px;
-	border-left: #FFF 2px solid;
+	border-right: #FFF 2px solid;
 
 }
-#right a{
+#left a{
 	color:#474553;
 }
-#right a:hover{
+#left a:hover{
 	color:#85a157;
 }
-#right h2{
+#left h2{
 	color:#7378F7;
 }
+
+
+/********************** Box ***************************/
+#nav-box {
+	width : 160px; 
+	height : 190px;
+	margin-top : 0px;
+	margin-left : 0px;	
+	border : 3.5px solid #000; 
+	background-color : #223f61; 
+	-webkit-border-radius: 25px; /* Safari prototype */
+	-moz-border-radius: 25px; /* Gecko browsers */
+	border-radius: 25px; /* Everything else - limited support at the moment */
+} 
+
+#nav-box a {
+color : #fff; 
+text-decoration : none;
+font-weight:bold;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 14px;
+
+}
+
+#nav-box a:hover {
+color : #6ca2be; 
+text-decoration : none; 
+font-weight:bold;
+} 
+
+
 /********************** Footer ***************************/
 #footerline {
 clear:both;
@@ -145,4 +304,5 @@ height:11px;
 	width:717px;
 	text-align:center;
 	padding: 20px 0px;
+	font-weight: bold;
 }
