@@ -1,5 +1,6 @@
 <?php
-   include('header.php');
+  session_start(); 
+  include('header.php');
 ?>
 			
        <div id="content">
@@ -18,9 +19,12 @@
                 </div>
                 <div id="left">
 			<div id="nav-box" align="center">
-
-
-				<form action="home.php" method="post">
+			
+<?php
+			   
+			   if(empty($_SESSION['username'])) {
+?>
+				<form action="login.php" method="post">
 				<br>
 				<b><i><font size="2" face="Verdana" color="#fff">Username:</b></i><input type="text" size=15 name="username" >
 				<br><br>
@@ -30,8 +34,24 @@
 				<br><br>
 				</form>
 
-				<a href="#"><i>Register Here</i></a>
+				<a href="register.php"><i>Register Here</i></a>
+<?php			 
+			  } else {
+?>
+				<b><br><i><font size="2.5" face="Verdana" color="#fff">You are currently logged in. <br><br><u>View your</u>: <br></b></i></font>
 
+				&nbsp;&nbsp;<a href="#"><i>Profile</i></a><br>
+				&nbsp;&nbsp;<a href="#"><i>Projects</i></a><br>
+				&nbsp;&nbsp;<a href="#"><i>Proposals</i></a><br>
+				<br><br>
+
+				<a href="logout.php"><i>Logout</i></a>
+
+
+<?php
+			   }
+
+?>
 			</div>
 		     
                     <h2>Latest news</h2>
