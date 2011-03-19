@@ -4,11 +4,11 @@
 			
        <div id="content">
                 <div id="right">
-                    <h1>Welcome to the project repository!</h1>
+                    <h1>Welcome, Guest!</h1>
                     <p>This website provides complete access to all student-developed research applications.  </p>
                     <p>From here you can view the list of available projects, submit a project you have already completed or submit a new project proposal.</p>
                     <p>To submit a project or a project proposal, simply click on the link provided above and follow the instructions detailed on that page.</p>
-                    <h1>Recent Photos</h1>
+                    <h1>Featured Project:</h1>
                     <div id="photos">
                         <a href="http://www.umw.edu"><img src="images/mdub3d_water_test.jpg" alt="photo" /></a>
                         <a href="http://www.umw.edu"><img src="images/TIE_Intercept.jpg" alt="photo" /></a>
@@ -22,7 +22,7 @@
 
 				<form action="home.php" method="post">
 				<br>
-				<b><i><font size="2" face="Verdana" color="#e7e7e7">Username:</b></i><input type="text" size=15 name="username" >
+				<b><i><font size="2" face="Verdana" color="#fff">Username:</b></i><input type="text" size=15 name="username" >
 				<br><br>
 				<b><i>Password:</b></i><input type="password" size=15 name="password" ></font>
 				<br><br>
