@@ -62,6 +62,8 @@
                     <a href="http://www.umw.edu">Project Screenshots</a>
                     <p>Review the most recent screenshot uploads of any project currently in progress for for previous projects now submitted.</p>
                 </div>
+		
 <?php
    include('footer.html');
 ?>  
+	</div>
