@@ -6,11 +6,11 @@
        <div id="content">
                 <div id="right">
                     <h1>User Registration</h1>
-                    <p>The UMW Research Repository registration process requires the following information. Follow the steps below.</p>
+                    <p>The UMW Research Repository registration process requires the following information.</p>
                   
    
 <form action="register.php" method="post">
-<table>
+<table width=440px >
 <?php
 if(isset($_POST['Register']))
 {
@@ -22,22 +22,22 @@ else
 {
 ?>
 <tr>
-	<td>Username </td><td><input type="text" name="user"></td>
+	<td>Username: </td><td><input type="text" name="user"></td>
 </tr>
 <tr>
-	<td>First Name</td><td><input type="text" name="first"></td>
+	<td>First Name:</td><td><input type="text" name="first"></td>
 </tr>
 <tr>
-	<td>Last Name  </td><td><input type="text" name="last"></td>
+	<td>Last Name:  </td><td><input type="text" name="last"></td>
 </tr>
 <tr>
 <tr>
-	<td>Email  </td><td><input type="text" name="email"></td>
+	<td>Email:  </td><td><input type="text" name="email"></td>
 </tr>
-	<td>Password  </td><td><input type="password" name="password"></td>
+	<td>Password:  </td><td><input type="password" name="password"></td>
 </tr>
 <tr>
-	<td>Re-Enter Password  </td><td><input type="password" name="password"></td>
+	<td>Re-Enter Password:  </td><td><input type="password" name="password"></td>
 </tr>
 </table>
 	<br />

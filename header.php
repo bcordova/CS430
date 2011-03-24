@@ -85,12 +85,25 @@
 
 ?>
 			</div>
-		     
-                    <h2>Latest news</h2>
-                    <a href="http://www.umw.edu">Project Uploads</a>
-                    <p>Find out all the new information about recent project uploads!</p>
-                    <a href="http://www.umw.edu">Project Proposals</a>
-                    <p>See all the new project proposals that have been submitted by current students in the department.</p>
-                    <a href="http://www.umw.edu">Project Screenshots</a>
-                    <p>Review the most recent screenshot uploads of any project currently in progress for for previous projects now submitted.</p>
+		     <br><br>
+
+<div id="nav-box2" align="center">
+<br>
+		<b><i><font size="3" face="Georgia" color="#e7e7e7">Latest News:</b></i></font><br><br>
+                    <a href="http://www.umw.edu">Project Uploads</a><br>
+                     <font size="2" face="Georgia" color="#fff">Find out all the new information about recent project uploads!<br><br>
+                    <a href="http://www.umw.edu">Project Proposals</a><br>
+                     See all the new project proposals that have been submitted by current students in the department.<br><br>
+                    <a href="http://www.umw.edu">Project Screenshots</a><br>
+                     Review the most recent screenshot uploads of any project currently in progress for for previous projects now submitted.</font>
+
+		<br><br>
+
+
+		</div>
+
+
+
+		
+                   
                 </div>
