@@ -53,8 +53,24 @@
 <div id="left">
 			<div id="nav-box" align="center">
 <?php
-			   
-			   if(empty($_SESSION['username'])) {
+			   $errorToPrint = "hi";
+			   if(empty($_SESSION['user_id'])) {
+					$errorToPrint = "";
+					
+					$error=$_GET['error'];				 
+
+					if ($error=="empty") {
+
+						$errorToPrint = "A username and password must be entered!";
+
+					} else if ($error=="invalid") {
+				
+       						$errorToPrint = "The username or password you entered was incorrect!";
+				
+   					} 
+
+				echo "<br><center><b><i><h4><font color=#FF0000 >" . $errorToPrint . "</font></h4></i></b></center></b></i>";
+
 ?>
 				<form action="login.php" method="post">
 				<br>
@@ -69,6 +85,7 @@
 				<a href="register.php"><i>Register Here</i></a>
 <?php			 
 			  } else {
+
 ?>
 				<b><br><i><font size="2.5" face="Verdana" color="#fff">You are currently logged in. <br><br><u>View your</u>: <br></b></i></font>
 
@@ -88,7 +105,7 @@
 		     <br><br>
 
 <div id="nav-box2" align="center">
-<br>
+<br>		
 		<b><i><font size="3" face="Georgia" color="#e7e7e7">Latest News:</b></i></font><br><br>
                     <a href="http://www.umw.edu">Project Uploads</a><br>
                      <font size="2" face="Georgia" color="#fff">Find out all the new information about recent project uploads!<br><br>

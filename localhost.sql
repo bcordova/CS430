@@ -255,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `tag_team` (
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(40) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -268,4 +268,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- Dumping data for table `user`
 --
+INSERT INTO `user` (`username`, `password`, `first_name`, `last_name`,  `email`, `email_token`, `email_authenticated`, `is_active`) VALUES
+('asams', SHA('pwd'), 'Amy', 'Sams', 'asams@mail.umw.edu', 'asdfghjkl;', 'Y', 'Y')
+
+;
+
+
 

@@ -1,11 +1,37 @@
 <?php
   session_start(); 
+  
+  include('db_connect.php');
+
   include('header.php');
+
+  $user_id = $_SESSION['user_id'];
+
+  if(!isset($_SESSION['user_id'])){
+	$firstName = "Guest";
+  } else {
+	$query = "SELECT * FROM user WHERE user_id=$user_id";
+	$result = mysqli_query($db, $query) or die ("Error Querying Database");
+	
+	
+	if($row = mysqli_fetch_array($result)) {
+		$firstName = $row['first_name'];
+		$lastName = $row['last_name'];
+	}
+	
+
+
+  }
+
 ?>
-			
+		
        <div id="content">
                 <div id="right">
-                    <h1>Welcome, Guest!</h1>
+<?php
+                    echo"<h1>Welcome, " . $firstName . "!</h1>";
+		    //echo $user_id;
+		    //echo $query;
+?>
                     <p>This website provides complete access to all student-developed research applications.  </p>
                     <p>From here you can view the list of available projects, submit a project you have already completed or submit a new project proposal.<br>
                     <br>To submit a project or a project proposal, simply click on the link provided above and follow the instructions detailed on that page.</p>
