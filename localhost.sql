@@ -1,25 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 3.3.8.1
--- http://www.phpmyadmin.net
+DROP DATABASE IF EXISTS mwcpscor_trinkleDB;
+
+CREATE DATABASE IF NOT EXISTS mwcpscor_trinkleDB;
+GRANT ALL PRIVILEGES ON mwcpscor_trinkleDB.* TO 'researchUser'@'localhost' identified by 'research';
 --
--- Host: localhost
--- Generation Time: Mar 18, 2011 at 09:57 PM
--- Server version: 5.1.47
--- PHP Version: 5.2.9
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
+-- 
 --
--- Database: `mwcpscor_trinkleDB`
---
-CREATE DATABASE `mwcpscor_trinkleDB` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `mwcpscor_trinkleDB`;
+USE mwcpscor_trinkleDB;
+
+
 
 -- --------------------------------------------------------
 
