@@ -58,7 +58,7 @@
 
 <?php 
 		 } else {
-			include('userIndex.html');
+			include('userIndex.php');
 
 		 }
 ?>
