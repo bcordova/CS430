@@ -11,7 +11,6 @@
 					
  <SCRIPT LANGUAGE="JavaScript">
 
-
 function checkFields() {
 
 re = "/^(\d{4})\/\(\d{1,2})\/\(\d{1,2})/"; 
@@ -49,6 +48,7 @@ else return true;
 
 </script>
 
+
  <form method="post" form name=form action="completeRegistration.php" onSubmit="return checkFields();">
 
 <input type=hidden name=subject value="Freedback">
@@ -62,9 +62,9 @@ First Name:       <input type=text name="firstname" size=25>
 
 Last Name:        <input type=text name="lastname" size=25>
 
-Password:         <input type=text name="password" size=25>
+Password:         <input type=password name="password" size=25>
 
-Re-enter Password:<input type=text name="rpassword" size=25>
+Re-enter Password:<input type=password name="rpassword" size=25>
 
 <input type=submit name="submit" value="Submit Form!">
 </pre>
