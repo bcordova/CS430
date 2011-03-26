@@ -68,10 +68,47 @@ print "$email is not a valid email address";
 	print "activation code is: $activate_code";
 	echo "<br/>";
 	
+	
+	/**if (!$res = mysql_query($sql))
+    {
+        // IF ERROR, BUT NOT A DUPLICATE EMAIL ADDRESS
+        if ( mysql_errno() != 1062 )
+        {
+            $errmsg = mysql_errno() . ' ' . mysql_error();
+            echo "<br/>QUERY FAIL: ";
+            echo "<br/>$sql <br/>";
+            die($errmsg);
+        }
+        // IF A DUPLICATE REGISTRATION, RECOVER THE ACTIVATION CODE
+        else
+        {
+            //$sql = "SELECT activate_code FROM userTable WHERE email_address = '$safe_email_address' AND activated_yes = 0 LIMIT 1";
+           // $res = mysql_query($sql);
+           //$num = mysql_num_rows($res);
+           // if ($num == 0) die("THANK YOU - YOU ARE ALREADY REGISTERED AND CONFIRMED");
+
+            //$row = mysql_fetch_assoc($res);
+            //$activate_code = $row["activate_code"];
+        }
+    }**/
+	
+// SEND THE ACTIVATION EMAIL
+/**    $msg = '';
+    $msg .= 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
+    $msg .= "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["PHP_SELF"] . "?q=$activate_code";
+    mail( $email_address, 'PLEASE CONFIRM YOUR REGISTRATION', $msg);
+	
+    // TELL THE CLIENT TO CHECK HER EMAIL
+    die("PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION LINK");**/
+
+//ini_set ("SMTP","mail.mwcpsc.org");
+//ini_set ("sendmail_from","webmaster@mwcpsc.org");
+
+
 	print "Thank you for registering.  A confirmation email has been sent to the 
 				following email address: $email"; 		
-}
- 
+
+} 
 /**  $query = "INSERT INTO user (username, password, first_name, last_name, email) " .
    "VALUES ('$username', '$password', '$firstname', '$lastname', '$email')";
   
