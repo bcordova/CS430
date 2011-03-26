@@ -1,57 +1,78 @@
 <?php
   session_start(); 
   include('header.php');
+  include("db_connect.php");
 ?>
 			
        <div id="content">
                 <div id="right">
                     <h1>User Registration</h1>
                     <p>The UMW Research Repository registration process requires the following information.</p>
-                  
-   
-<form action="register.php" method="post">
-<table width=440px >
-<?php
-if(isset($_POST['Register']))
-{
-	//$query ="insert into users(Username,Email,FirstName,LastName,BirthDate,password) values('" . $_POST['user'] . "','" . $_POST['email'] . "','" . $_POST['first'] . "','" . $_POST['last'] . "','" . $_POST['birth'] . "',SHA('" . $_POST['password'] . "'))";
-	//mysqli_query($db,$query);
-	//echo "Thank you for signing up
+					
+ <SCRIPT LANGUAGE="JavaScript">
+
+
+function checkFields() {
+
+re = "/^(\d{4})\/\(\d{1,2})\/\(\d{1,2})/"; 
+
+missinginfo = "";
+if (document.form.username.value == "") {
+missinginfo += "\n     -  Username";
 }
-else
-{
-?>
-<tr>
-	<td>Username: </td><td><input type="text" name="user"></td>
-</tr>
-<tr>
-	<td>First Name:</td><td><input type="text" name="first"></td>
-</tr>
-<tr>
-	<td>Last Name:  </td><td><input type="text" name="last"></td>
-</tr>
-<tr>
-<tr>
-	<td>Email:  </td><td><input type="text" name="email"></td>
-</tr>
-	<td>Password:  </td><td><input type="password" name="password"></td>
-</tr>
-<tr>
-	<td>Re-Enter Password:  </td><td><input type="password" name="password"></td>
-</tr>
-</table>
-	<br />
-	<input type="submit" value="Register" name="Register">
-	</form>
-	<br />
-               
-           
-<?php
+if (document.form.email.value == "") {
+missinginfo += "\n     -  Email";
 }
-?>
-			 </div>
-			
+if (document.form.firstname.value == "") {
+missinginfo += "\n     -  First Name";
+}
+if(document.form.lastname.value == "") {
+missinginfo += "\n     -  Last Name";
+}
+if(document.form.password.value == "") {
+missinginfo += "\n     -  Password";
+
+}if(document.form.rpassword.value == "") {
+missinginfo += "\n     -  Re-enter Password";
+}
+
+if (missinginfo != "") {
+missinginfo ="_____________________________\n" +
+"You failed to correctly fill in your:\n" +
+missinginfo + "\n_____________________________" +
+"\nPlease re-enter and submit again!";
+alert(missinginfo);
+return false;
+}
+else return true;
+}
+
+</script>
+
+ <form method="post" form name=form action="completeRegistration.php" onSubmit="return checkFields();">
+
+<input type=hidden name=subject value="Freedback">
+
+<pre>
+Username:    	  <input type=text name="username" size=25>
+
+Email Address:    <input type=text name="email" size=25>
+
+First Name:       <input type=text name="firstname" size=25>
+
+Last Name:        <input type=text name="lastname" size=25>
+
+Password:         <input type=text name="password" size=25>
+
+Re-enter Password:<input type=text name="rpassword" size=25>
+
+<input type=submit name="submit" value="Submit Form!">
+</pre>
+
+</form>
+</div>
+		
 <?php
    include('footer.html');
 ?>  
-</div>
+		</div>
