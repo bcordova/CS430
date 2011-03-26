@@ -31,6 +31,8 @@
                     echo"<h1>Welcome, " . $firstName . "!</h1>";
 		    //echo $user_id;
 		    //echo $query;
+
+		    if ($firstName == "Guest") {
 ?>
                     <p>This website provides complete access to all student-developed research applications.  </p>
                     <p>From here you can view the list of available projects, submit a project you have already completed or submit a new project proposal.<br>
@@ -53,9 +55,15 @@
 		</table></center>
 
 
-                </div>
+
+<?php 
+		 } else {
+			include('userIndex.html');
+
+		 }
+?>
                 
-		
+</div>		
 <?php
    include('footer.html');
 ?>  

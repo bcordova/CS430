@@ -239,7 +239,8 @@ h2{
 	padding: 0px 20px 20px 0px;
 	display:inline;
 }
-#right a{color:#28556b;}
+#right a{color:#28556b;
+  	text-decoration: none}
 #right a:hover{color:#c77e0c;}
 #photos a{
 	margin-right:10px;
