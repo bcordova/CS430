@@ -1,7 +1,7 @@
 <?php
   session_start(); 
   include('header.php');
-  include("db_connect.php");
+  //include("db_connect.php");
 ?>
 			
        <div id="content">
