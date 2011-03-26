@@ -20,11 +20,19 @@
   
   print "$email";
   
+  $query = "INSERT INTO user (username, password, first_name, last_name, email) " .
+   "VALUES ('$username', '$password', '$firstname', '$lastname', '$email')";
+  
+  $result = mysqli_query($db, $query)
+   or die("Error".mysqli_error($db));
+  
+   
 ?>
 				  
 </div>
 		
 <?php
    include('footer.html');
+   mysqli_close($db);
 ?>  
 		</div>
