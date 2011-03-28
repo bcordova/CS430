@@ -3,11 +3,9 @@
   include('header.php');
   //include("db_connect.php");
 ?>
-			
-       <div id="content">
+<div id="content">
                 <div id="right">
-                    <h1>User Registration</h1>
-                    <p>The UMW Research Repository registration process requires the following information.</p>
+                    
 					
  <SCRIPT LANGUAGE="JavaScript">
 
@@ -48,7 +46,15 @@ else return true;
 
 </script>
 
+<?php
+$js = $POST['js_enabled'];
 
+if ($js == 1) {
+?>
+	
+       <h1>User Registration</h1>
+                    <p>The UMW Research Repository registration process requires the following information.</p>
+					
  <form method="post" form name=form action="completeRegistration.php" onSubmit="return checkFields();">
 
 <input type=hidden name=subject value="Freedback">
@@ -70,6 +76,12 @@ Re-enter Password:<input type=password name="rpassword" size=25>
 </pre>
 
 </form>
+<?php
+} else {
+echo "<br/>";
+echo "PLEASE ENABLE JAVASCRIPT AND TRY AGAIN.";
+}
+?>
 </div>
 		
 <?php
