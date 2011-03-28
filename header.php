@@ -81,8 +81,12 @@
 				<input type="submit" class="formbutton" value="Login">
 				<br><br>
 				</form>
-
-				<a href="register.php"><i>Register Here</i></a>
+				
+<form onsubmit="this.js_enabled.value=1;return true;" action="register.php" method="post" >
+    <input type="hidden" name="js_enabled" value="0">
+    <input type="submit" value="Register">
+</form>
+			
 <?php			 
 			  } else {
 

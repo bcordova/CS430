@@ -9,6 +9,7 @@
                 <div id="right">
 				<br/>
   <?php
+  
   $username = $_POST['username'];
   $email = $_POST['email'];
   $firstname = $_POST['firstname'];
