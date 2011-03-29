@@ -26,7 +26,7 @@
 			<li ><a href="index.php" id="current">Home</a></li>
 			<li><a href="#">Members</a>
 				<ul>
-					<li><a href="#">View All Users</a></li> 
+					<li><a href="viewUsers.php">View All Users</a></li> 
 				</ul>
 			</li>
 			<li><a href="#">Proposals</a>
