@@ -18,7 +18,6 @@
   
 if ($js == 1) {
 
-
 // AN EMAIL VALIDATION SCRIPT THAT RETURNS TRUE OR FALSE
 function check_valid_email($email)
 {
@@ -55,10 +54,18 @@ function check_valid_email($email)
     return FALSE;
 }
 
- // VALIDATE THE EMAIL ADDRESS
-if (check_valid_email($email) == FALSE) {
+//EXTRACT DOMAIN NAME FROM EMAIL ADDRESS
+   $addypieces = explode('@',$email);
+   $emailname = strtolower(trim($addypieces[0]));
+   $emaildomain = strtolower(trim($addypieces[1]));
+   $needle = "umw.edu";
 
-print "$email is not a valid email address";
+ // VALIDATE THE EMAIL ADDRESS
+if ((check_valid_email($email) == FALSE) || (strpos($emaildomain, $needle) === FALSE)) {
+
+echo "<br/>$email IS NOT A VALID EMAIL ADDRESS.";
+echo "<br/><br/>**NOTE: YOU MUST PROVIDE A '@UMW.EDU' OR '@MAIL.UMW.EDU' EMAIL ADDRESS IN ORDER TO REGISTER.";
+
   
 } else {
 
@@ -73,7 +80,7 @@ print "$email is not a valid email address";
     $result = $row["count(email)"];
  
     if ($result > 0){
-           print "THANK YOU - YOU ARE ALREADY REGISTERED AND CONFIRMED";
+           print "<br/>THANK YOU - YOU ARE ALREADY REGISTERED AND CONFIRMED";
            
     } else if ($result == 0) {
     
@@ -85,7 +92,7 @@ print "$email is not a valid email address";
            if ($result != 0)
            {
            
-           print "THANK YOU - YOU ARE ALREADY REGISTERED.  PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION EMAIL.";
+           echo "<br/>THANK YOU - YOU ARE ALREADY REGISTERED.  PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION EMAIL.";
            
            } else if ($result == 0) {
     	   //MAKE THE ACTIVATION CODE	
@@ -94,21 +101,20 @@ print "$email is not a valid email address";
   	   // echo "<br/>";
     		
    	   // SEND THE ACTIVATION EMAIL
-   	   /**$msg = 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
+   	   $msg = 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
     	   $msg .= "http://" . $_SERVER["HTTP_HOST"]. "/verifyEmail.php" . "?q=$activate_code";
     	   mail( $email_address, 'PLEASE CONFIRM YOUR REGISTRATION', $msg);
    	   print "THANK YOU FOR REGISTERING.  A CONFIRMATION EMAIL HAS BEEN SENT TO THE FOLLOWING EMAIL ADDRESS: $email"; 
     	   $query = "INSERT INTO user (username, password, first_name, last_name, email, email_token) " .
     	   "VALUES ('$username', SHA('$password'), '$firstname', '$lastname', '$email', '$activate_code')";
     	   $result = mysqli_query($db, $query)
-   	   or die("Error".mysqli_error($db));    **/
+   	   or die("Error".mysqli_error($db));    
     	  }}
-}
+} 
 } else {
 echo "<br/>";
 echo "PLEASE ENABLE JAVASCRIPT AND TRY AGAIN.";
-}  
-
+}   
 ?>
 				  
 </div>
