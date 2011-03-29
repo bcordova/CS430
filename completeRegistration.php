@@ -9,12 +9,16 @@
                 <div id="right">
 				<br/>
 <?php
-  
+  $js = $_POST['js_enabled'];
   $username = $_POST['username'];
   $email = $_POST['email'];
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'] ;
   $password = $_POST['password'];
+  
+if ($js == 1) {
+
+
 // AN EMAIL VALIDATION SCRIPT THAT RETURNS TRUE OR FALSE
 function check_valid_email($email)
 {
@@ -99,7 +103,12 @@ print "$email is not a valid email address";
     	   $result = mysqli_query($db, $query)
    	   or die("Error".mysqli_error($db));    
     	  }}
+}
+} else {
+echo "<br/>";
+echo "PLEASE ENABLE JAVASCRIPT AND TRY AGAIN.";
 }  
+
 ?>
 				  
 </div>
