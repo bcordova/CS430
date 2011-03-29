@@ -8,14 +8,13 @@
        <div id="content">
                 <div id="right">
 				<br/>
-  <?php
+<?php
   
   $username = $_POST['username'];
   $email = $_POST['email'];
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'] ;
   $password = $_POST['password'];
-  
 // AN EMAIL VALIDATION SCRIPT THAT RETURNS TRUE OR FALSE
 function check_valid_email($email)
 {
@@ -59,64 +58,48 @@ print "$email is not a valid email address";
   
 } else {
 
-// NORMALIZE THE EMAIL ADDRESS
+//NORMALIZE THE EMAIL ADDRESS
     $email_address = trim($email);
     $email_address = strtolower($email_address);
-    //$safe_email_address = mysql_real_escape_string($email_address);
-
-//MAKE THE ACTIVATION CODE	
-	$activate_code= md5( mt_rand(). time(). $email_address. $_SERVER["REMOTE_ADDR"]);
-	print "activation code is: $activate_code";
-	echo "<br/>";
-	
-	
-	/**if (!$res = mysql_query($sql))
-    {
-        // IF ERROR, BUT NOT A DUPLICATE EMAIL ADDRESS
-        if ( mysql_errno() != 1062 )
-        {
-            $errmsg = mysql_errno() . ' ' . mysql_error();
-            echo "<br/>QUERY FAIL: ";
-            echo "<br/>$sql <br/>";
-            die($errmsg);
-        }
-        // IF A DUPLICATE REGISTRATION, RECOVER THE ACTIVATION CODE
-        else
-        {
-            //$sql = "SELECT activate_code FROM userTable WHERE email_address = '$safe_email_address' AND activated_yes = 0 LIMIT 1";
-           // $res = mysql_query($sql);
-           //$num = mysql_num_rows($res);
-           // if ($num == 0) die("THANK YOU - YOU ARE ALREADY REGISTERED AND CONFIRMED");
-
-            //$row = mysql_fetch_assoc($res);
-            //$activate_code = $row["activate_code"];
-        }
-    }**/
-	
-// SEND THE ACTIVATION EMAIL
-/**    $msg = '';
-    $msg .= 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
-    $msg .= "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["PHP_SELF"] . "?q=$activate_code";
-    mail( $email_address, 'PLEASE CONFIRM YOUR REGISTRATION', $msg);
-	
-    // TELL THE CLIENT TO CHECK HER EMAIL
-    die("PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION LINK");**/
-
-//ini_set ("SMTP","mail.mwcpsc.org");
-//ini_set ("sendmail_from","webmaster@mwcpsc.org");
-
-
-	print "Thank you for registering.  A confirmation email has been sent to the 
-				following email address: $email"; 		
-
-} 
-/**  $query = "INSERT INTO user (username, password, first_name, last_name, email) " .
-   "VALUES ('$username', '$password', '$firstname', '$lastname', '$email')";
-  
-  $result = mysqli_query($db, $query)
-   or die("Error".mysqli_error($db));**/
-  
-   
+    
+//CHECK FOR DUPLICATE REGISTRATION
+    $query = "SELECT count(email) FROM user WHERE email = '$email_address' AND email_authenticated = 'Y'";
+    $result = mysqli_query($db, $query);
+    $row = mysqli_fetch_array($result);
+    $result = $row["count(email)"];
+ 
+    if ($result > 0){
+           print "THANK YOU - YOU ARE ALREADY REGISTERED AND CONFIRMED";
+           
+    } else if ($result == 0) {
+    
+    	   $query = "SELECT count(email) FROM user WHERE email = '$email_address'";
+   	   $result = mysqli_query($db, $query);
+   	   $row = mysqli_fetch_array($result);
+    	   $result = $row["count(email)"];
+    	   
+           if ($result != 0)
+           {
+           
+           print "THANK YOU - YOU ARE ALREADY REGISTERED.  PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION EMAIL.";
+           
+           } else if ($result == 0) {
+    	   //MAKE THE ACTIVATION CODE	
+   	   $activate_code= md5( mt_rand(). time(). $email_address. $_SERVER["REMOTE_ADDR"]);
+   	   //print "activation code is: $activate_code";
+  	   // echo "<br/>";
+    		
+   	   // SEND THE ACTIVATION EMAIL
+   	   $msg = 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
+    	   $msg .= "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["index.php"] . "?q=$activate_code";
+    	   mail( $email_address, 'PLEASE CONFIRM YOUR REGISTRATION', $msg);
+   	   print "THANK YOU FOR REGISTERING.  A CONFIRMATION EMAIL HAS BEEN SENT TO THE FOLLOWING EMAIL ADDRESS: $email"; 
+    	   $query = "INSERT INTO user (username, password, first_name, last_name, email, email_token) " .
+    	   "VALUES ('$username', SHA('$password'), '$firstname', '$lastname', '$email', '$activate_code')";
+    	   $result = mysqli_query($db, $query)
+   	   or die("Error".mysqli_error($db));    
+    	  }}
+}  
 ?>
 				  
 </div>
@@ -125,4 +108,4 @@ print "$email is not a valid email address";
    include('footer.html');
    mysqli_close($db);
 ?>  
-		</div>
+</div>

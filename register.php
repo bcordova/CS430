@@ -32,6 +32,9 @@ missinginfo += "\n     -  Password";
 }if(document.form.rpassword.value == "") {
 missinginfo += "\n     -  Re-enter Password";
 }
+if(document.form.rpassword.value != document.form.password.value) {
+missinginfo += "\n     **Passwords do not match";
+}
 
 if (missinginfo != "") {
 missinginfo ="_____________________________\n" +
@@ -47,7 +50,7 @@ else return true;
 </script>
 
 <?php
-$js = $POST['js_enabled'];
+$js = $_POST['js_enabled'];
 
 if ($js == 1) {
 ?>
@@ -57,7 +60,7 @@ if ($js == 1) {
 					
  <form method="post" form name=form action="completeRegistration.php" onSubmit="return checkFields();">
 
-<input type=hidden name=subject value="Freedback">
+<input type="hidden" name=subject value="Freedback">
 
 <pre>
 Username:    	  <input type=text name="username" size=25>
