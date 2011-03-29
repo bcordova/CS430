@@ -10,6 +10,8 @@
 	
 	
   if($row = mysqli_fetch_array($result)) {
+  	$username= $row['username'];
+  	$email= $row['email'];
 	$firstName = $row['first_name'];
 	$lastName = $row['last_name'];
 	
@@ -17,6 +19,8 @@
 
 echo "<br><h3>Your Account Information:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"editAccountInfo.php\">(edit)</a></h3>";
 echo "<h4><b>Name: </b>" . $firstName . " " . $lastName . "<br>";
+echo "<h4><b>Email Address: </b>" . $email . "<br>";
+echo "<h4><b>Username: </b>" . $username . "<br>";
 
 
 ?>
