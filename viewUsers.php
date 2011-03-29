@@ -3,10 +3,14 @@
   include('header.php');
   include("db_connect.php");
 ?>
+
 <div id="content">
                 <div id="right">
 <?php			
-	
+		if(isset($_SESSION['user_id']))
+			{
+				   //$user = $_SESSION['username'];
+				   //$id = $_SESSION['userid'];
 			 	   echo "<br/>";
 			 	   $query = "SELECT * from user";
 				   $result = mysqli_query($db, $query);
@@ -17,6 +21,9 @@
 				   echo "<tr><td>{$row['username']}</td> <td>{$row['email']}</td> <td>{$row['first_name']} {$row['last_name']}</td></tr>";
 				   }
 				   echo "</table>";
+			} else {
+			echo "<br/>YOU MUST BE LOGGED IN TO ACCESS THIS FEATURE."
+			}
 ?>				
 				
 				</div>
