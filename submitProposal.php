@@ -1,11 +1,22 @@
 <?php
   session_start(); 
   include('header.php');
-  //include('db_connect.php');
+  include('db_connect.php');
 ?>
 			
        <div id="content">
                 <div id="right">
+<?php
+if(!isset($_SESSION['user_id'])){
+
+?>
+		    <h1><center>If you would like to submit a proposal, you need to login.  Please use the form on the left.</center></h1>
+
+
+<?php
+} else {
+?>
+
                     <h1>Submit a Proposal</h1>
                     <p>If you would like to submit a proposal, please enter the following information: </p>
                   
@@ -114,6 +125,8 @@ else
                
            
 <?php
+}
+
 }
 ?>
 			 </div>

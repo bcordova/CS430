@@ -335,6 +335,15 @@ margin-right : 3px;
 //background-color : #223f61; 
 } 
 
+table, th, td
+{
+border: 1px solid black;
+}
+
+table, th {
+text-align:center;
+}
+
 /********************** Footer ***************************/
 #footerline {
 clear:both;

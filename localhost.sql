@@ -26,8 +26,9 @@ CREATE TABLE IF NOT EXISTS `faculty` (
 --
 -- Dumping data for table `faculty`
 --
-
-
+INSERT INTO `student` (`faculty_id`, `user_id`, `is_approved`, `is_admin`) VALUES
+(1, 2, 'Y', 'Y')
+;
 -- --------------------------------------------------------
 
 --
@@ -82,6 +83,9 @@ CREATE TABLE IF NOT EXISTS `project` (
 -- Dumping data for table `project`
 --
 
+INSERT INTO `project` (`project_id`, `title`, `course`, `semester`, `summary`) VALUES
+(1, 'Test Project Title Here', 'CPSC 391', 'Spring 2011', 'This project is all about something....blah blah blah....more summary here')
+;
 
 -- --------------------------------------------------------
 
@@ -100,6 +104,8 @@ CREATE TABLE IF NOT EXISTS `project_group` (
 --
 -- Dumping data for table `project_group`
 --
+INSERT INTO `project_group` (`project_group_id`, `project_id`, `student_id`, `faculty_id`) VALUES
+(1, 1, 1,1);
 
 
 -- --------------------------------------------------------
@@ -210,6 +216,10 @@ CREATE TABLE IF NOT EXISTS `student` (
 -- Dumping data for table `student`
 --
 
+INSERT INTO `student` (`student_id`, `user_id`) VALUES
+(1, 1)
+;
+
 
 -- --------------------------------------------------------
 
@@ -227,6 +237,9 @@ CREATE TABLE IF NOT EXISTS `tag` (
 -- Dumping data for table `tag`
 --
 
+INSERT INTO `tag` (`tag_id`, `actual_tag`) VALUES
+(1, 'test')
+;
 
 -- --------------------------------------------------------
 
@@ -245,6 +258,9 @@ CREATE TABLE IF NOT EXISTS `tag_team` (
 -- Dumping data for table `tag_team`
 --
 
+INSERT INTO `tag_team` (`tag_team_id`, `tag_id`, `project_id`) VALUES
+(1, 1, 1)
+;
 
 -- --------------------------------------------------------
 
@@ -269,7 +285,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 INSERT INTO `user` (`username`, `password`, `first_name`, `last_name`,  `email`, `email_token`, `email_authenticated`, `is_active`) VALUES
-('asams', SHA('pwd'), 'Amy', 'Sams', 'asams@mail.umw.edu', 'asdfghjkl;', 'Y', 'Y')
+('asams', SHA('pwd'), 'Amy', 'Sams', 'asams@mail.umw.edu', 'asdfghjkl;', 'Y', 'Y'),
+('faculty', SHA('pwd'), 'FacultyFirst', 'FacultyLast', 'faculty@umw.edu', 'asdfghjkl;', 'Y', 'Y')
 
 ;
 

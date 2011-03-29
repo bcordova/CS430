@@ -1,16 +1,27 @@
 <?php
   session_start(); 
   include('header.php');
-  //include('db_connect.php');
+  include('db_connect.php');
 ?>
 			
        <div id="content">
                 <div id="right">
+
+<?php
+if(!isset($_SESSION['user_id'])){
+
+?>
+		    <h1><center>If you would like to submit a project, you need to login.  Please use the form on the left.</center></h1>
+
+
+<?php
+} else {
+?>
                     <h1>Submit a Project</h1>
                     <p>If you would like to submit a project, please enter the following information: </p>
                   
    
-<form action="submitProject.php" method="post">
+<form action="submitProjectReceipt.php" method="post">
 <table>
 <?php
 if(isset($_POST['SubmitProject']))
@@ -92,6 +103,8 @@ else
                
            
 <?php
+}
+
 }
 ?>
 			 </div>

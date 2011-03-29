@@ -16,7 +16,7 @@
 				<option class="group" value="tag">Tag</option>
 				<option class="group" value="student">Student</option>
 			</select>
-			<input type="text" id="searchq" name="searchedFor" />
+			<input type="text"  name="searchedFor" />
 			<input type="submit" class="formbutton" value="Search" />
 		</form>
                 

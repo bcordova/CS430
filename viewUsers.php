@@ -22,7 +22,7 @@
 				   }
 				   echo "</table>";
 			} else {
-			echo "<br/>YOU MUST BE LOGGED IN TO ACCESS THIS FEATURE."
+			echo "<br/>YOU MUST BE LOGGED IN TO ACCESS THIS FEATURE.";
 			}
 ?>				
 				
