@@ -160,6 +160,16 @@ form input.formbutton
         margin-right : 0.0em; 
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 } 
+form input.hiddenbutton 
+{
+	background:#223f61 repeat-x scroll bottom left;
+	color: #FFFFFF;
+	font-size:13px;
+	border:1px solid #223f61;
+	font-weight:bold;
+        margin-right : 0.0em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+} 
 
 
 /********************** Search Form ***************************/
