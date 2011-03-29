@@ -91,7 +91,7 @@ print "$email is not a valid email address";
     		
    	   // SEND THE ACTIVATION EMAIL
    	   $msg = 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
-    	   $msg .= "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["index.php"] . "?q=$activate_code";
+    	   $msg .= "http://" . $_SERVER["HTTP_HOST"]. "/verifyEmail.php" . "?q=$activate_code";
     	   mail( $email_address, 'PLEASE CONFIRM YOUR REGISTRATION', $msg);
    	   print "THANK YOU FOR REGISTERING.  A CONFIRMATION EMAIL HAS BEEN SENT TO THE FOLLOWING EMAIL ADDRESS: $email"; 
     	   $query = "INSERT INTO user (username, password, first_name, last_name, email, email_token) " .
