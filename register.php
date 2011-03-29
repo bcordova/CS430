@@ -58,9 +58,7 @@ if ($js == 1) {
        <h1>User Registration</h1>
                     <p>The UMW Research Repository registration process requires the following information.</p>
 					
- <form method="post" form name=form action="completeRegistration.php" onSubmit="return checkFields();">
-
-<input type="hidden" name=subject value="Freedback">
+ <form method="post" form name=form action="completeRegistration.php" onclick="this.js_enabled.value=1;return true;" onSubmit="return checkFields();">
 
 <pre>
 Username:    	  <input type=text name="username" size=25>
@@ -75,7 +73,10 @@ Password:         <input type=password name="password" size=25>
 
 Re-enter Password:<input type=password name="rpassword" size=25>
 
+    <input type="hidden" name="js_enabled" value="0">
+
 <input type=submit name="submit" value="Submit Form!">
+
 </pre>
 
 </form>
