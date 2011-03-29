@@ -94,14 +94,14 @@ print "$email is not a valid email address";
   	   // echo "<br/>";
     		
    	   // SEND THE ACTIVATION EMAIL
-   	   $msg = 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
+   	   /**$msg = 'THANK YOU FOR YOUR REGISTRATION.  TO CONFIRM, PLEASE CLICK THIS LINK:' . PHP_EOL;
     	   $msg .= "http://" . $_SERVER["HTTP_HOST"]. "/verifyEmail.php" . "?q=$activate_code";
     	   mail( $email_address, 'PLEASE CONFIRM YOUR REGISTRATION', $msg);
    	   print "THANK YOU FOR REGISTERING.  A CONFIRMATION EMAIL HAS BEEN SENT TO THE FOLLOWING EMAIL ADDRESS: $email"; 
     	   $query = "INSERT INTO user (username, password, first_name, last_name, email, email_token) " .
     	   "VALUES ('$username', SHA('$password'), '$firstname', '$lastname', '$email', '$activate_code')";
     	   $result = mysqli_query($db, $query)
-   	   or die("Error".mysqli_error($db));    
+   	   or die("Error".mysqli_error($db));    **/
     	  }}
 }
 } else {
