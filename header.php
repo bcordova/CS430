@@ -3,6 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="http://www.umw.edu/favicon.ico" />
+
         <title>CPSC Project Repository</title>
     </head>
     <!-- #474553, #7378F7-->
@@ -16,7 +18,7 @@
 				<option class="group" value="tag">Tag</option>
 				<option class="group" value="student">Student</option>
 			</select>
-			<input type="text"  name="searchedFor" />
+			<input type="text" id="searchq" name="searchedFor" />
 			<input type="submit" class="formbutton" value="Search" />
 		</form>
                 
@@ -24,27 +26,28 @@
 	    	<div id="navcontainer">
 		<ul>
 			<li ><a href="index.php" id="current">Home</a></li>
-			<li><a href="#">Members</a>
+			<li><a href="viewUsers.php">Members</a>
 				<ul>
-					<li><a href="viewUsers.php">View All Users</a></li> 
+					<li><a href="viewUsers.php"><center>View All Users</center></a></li> 
 				</ul>
 			</li>
-			<li><a href="#">Proposals</a>
+			<li><a href="viewProposals.php">Proposals</a>
 				<ul>
-        				<li><a href="submitProposal.php">Submit A Proposal</a></li> 
-        				<li><a href="#">View Proposal Form</a></li> 
-					<li><a href="#">View All Proposals</a></li>
+        				<li><a href="submitProposal.php"><center>Submit A Proposal</center></a></li> 
+        				<li><a href="http://www.umw.edu/cas/computerscience/student_opportunities__act/individual_study/documents/individualStudyApp.doc"><center>View Proposal Form</center></a></li> 
+        				<li><a href="http://paprika.umw.edu/cpsc/HonorsProjectProposal.rtf"><center>View Honors Form</center></a></li>        		
+					<li><a href="viewProposals.php"><center>View All Proposals</center></a></li>
         			</ul>
 			</li>
-			<li><a href="#">Projects</a>
+			<li><a href="viewProjects.php">Projects</a>
 				<ul>
-					<li><a href="submitProject.php">Submit a Project</a></li> 
-        				<li><a href="#">View All Projects</a></li> 
-        				<li><a href="#">View All Tags</a></li>
+					<li><a href="submitProject.php"><center>Submit a Project</center></a></li> 
+        				<li><a href="viewProjects.php"><center>View All Projects</center></a></li> 
+        				<li><a href="viewTags.php"><center>View All Tags</center></a></li>
 				</ul>
 			</li>
 			
-			<li><a href="#">About Us</a></li>
+			<li><a href="aboutUs.php">About Us</a></li>
 		</ul>
 	    
 		</div>
@@ -81,8 +84,7 @@
 				<input type="submit" class="formbutton" value="Login">
 				<br><br>
 				</form>
-			
-<!--<a href="register.php"><i>Register</i></a>	-->		
+				
 <form onsubmit="this.js_enabled.value=1;return true;" action="register.php" method="post" >
     <input type="hidden" name="js_enabled" value="0">
     <input type="submit" class = "hiddenbutton" value="Register">
@@ -94,7 +96,7 @@
 ?>
 				<b><br><i><font size="2.5" face="Verdana" color="#fff">You are currently logged in. <br><br><u>View your</u>: <br></b></i></font>
 
-				&nbsp;&nbsp;<a href="#"><i>Profile</i></a><br>
+				&nbsp;&nbsp;<a href="index.php"><i>Profile</i></a><br>
 				&nbsp;&nbsp;<a href="#"><i>Projects</i></a><br>
 				&nbsp;&nbsp;<a href="#"><i>Proposals</i></a><br>
 				<br><br>
